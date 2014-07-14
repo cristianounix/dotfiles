@@ -1,8 +1,12 @@
 
+### First ###
 https://github.com/sorin-ionescu/prezto
 
-zsh dotfiles
+
+### MyDotFiles ###
+$ git clone https://github.com/cristianounix/dotfiles.git ~/
 
 
-Install Vundle
+#### VIM ####
+##### Install Vundle #####
 $ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
