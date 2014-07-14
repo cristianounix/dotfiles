@@ -6,7 +6,7 @@ syntax    enable
 filetype  plugin on
 filetype  indent on
 
-source ~/dotfiles/.vim/.bundles.vim
+source ~/dotfiles/vim/bundles.vim
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
