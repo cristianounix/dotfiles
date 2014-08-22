@@ -147,7 +147,6 @@ set laststatus=2
 
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
-set clipboard=unnamedplus
 set visualbell t_vb=
 set cursorline
 set history=1000
