@@ -8,7 +8,7 @@ fi
 
 brew install wget
 brew install python
-brew install ack
+brew install ack fortune
 brew install mysql
 brew install rbenv && brew install ruby-build
 brew install macvim --override-system-vim
