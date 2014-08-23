@@ -1,3 +1,4 @@
+export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -58,11 +59,13 @@ export PATH="/Users/cristianounix/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='vim'
+ fi
+
+ POWERLINE_DETECT_SSH="true"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
