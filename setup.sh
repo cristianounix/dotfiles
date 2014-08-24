@@ -33,7 +33,7 @@ list_apps_brew_cask(){
         "dropbox"
         "mou"
         "feeds"
-        "limechat"
+        #"limechat"
         "arduino"
         "google-drive"
     )
