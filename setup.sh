@@ -1,5 +1,12 @@
 #!/bin/bash
 
+bin_exists() {
+    if [ $(type -P $1) ]; then
+      return 0
+    fi
+    return 1
+}
+
 check_homebrew(){
   if which brew > /dev/null; then
     echo 'HomeBrew ok !'
@@ -37,12 +44,22 @@ list_apps_brew(){
         "ack"
         "fortune"
         "vim"
+        "coreutils"
+        "jpeg"
+        "imagemagick"
+        "libyaml"
         "tmux"
         "rbenv"
         "ruby-build"
         "mysql"
         "macvim --override-system-vim"
         "wget"
+        "node"
+        "git"
+        "ctags"
+        "autoconf"
+        "automake"
+        "openssl"
         "htop"
         "atop"
         "brew-cask"
