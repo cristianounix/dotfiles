@@ -23,6 +23,7 @@ list_apps_brew_cask(){
         "google-chrome"
         "skype"
         "iterm2"
+        "komanda"
         "utorrent"
         "vlc"
         "gfxcardstatus"
