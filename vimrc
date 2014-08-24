@@ -37,6 +37,7 @@ Plugin 'mattn/calendar-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'itspriddle/vim-stripper'
+Bundle 'vasconcelloslf/vim-foldfocus'
 
 " Snippets
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -129,7 +130,7 @@ set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
 "set foldenable                  " Auto fold code
-set regexpengine=1
+"set regexpengine=1
 set foldmethod=indent           "fold based on indent
 
 set noshowmode
@@ -216,6 +217,12 @@ set hidden
 map bn :bn<cr>          " Next buffer.
 map bp :bp<cr>          " Previous buffer.
 map bd :bd<cr>          " buffer close"
+
+
+" Flod Focus
+"map <Leader>ff :call FoldFocus('e')<CR> " Focus in place
+map <Leader>ff :call FoldFocus('vnew')<CR> " Focus sidebar
+
 
 """"""""""""""""" SHORTCUTS """""""""""""""""
 "jump to last cursor position when opening a file
