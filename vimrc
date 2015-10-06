@@ -1,8 +1,7 @@
+execute pathogen#infect()
 set nocompatible
-filetype off
 filetype  on
 syntax    on
-syntax    enable
 filetype  plugin on
 
 execute pathogen#infect()
@@ -90,7 +89,7 @@ execute pathogen#infect()
 
 filetype plugin indent on
 
-let g:airline_theme="badwolf"
+"set g:airline_theme="badwolf"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -109,7 +108,6 @@ if has("unix")
 endif
 
 let g:syntastic_enable_signs=1
-
 let mapleader = ","
 
 " Vim UI
@@ -117,6 +115,7 @@ set background=dark
 set tabpagemax=15               " Only show 15 tabs
 set ts=4 "tab size
 set showmode                    " Display the current mode
+"highlight clear SignColumn      " SignColumn should match background
 set linespace=4                 " No extra spaces between rows
 set showmatch                   " Show matching brackets/parenthesis
 set incsearch                   " Find as you type search
@@ -134,8 +133,11 @@ set scrolloff=3                 " Minimum lines to keep above and below cursor
 "set foldenable                  " Auto fold code
 "set regexpengine=1
 "set foldmethod=indent           "fold based on indent
-
 set noshowmode
+set bdir+=/tmp
+set dir-=.
+set dir+=/tmp
+set undolevels=10000                         " Large undo levels.
 set encoding=utf8                            " Always use unicode.
 set nobackup                                 " Disable backups.
 
@@ -161,7 +163,6 @@ set number                  " show line numbers
 set numberwidth=2
 set showmatch               " show matching bracket (briefly jump)
 set showcmd                 " show typed command in status bar
-
 "set title                  " show file in titlebar
 set matchtime=2             " show matching bracket for 0.2 seconds
 set matchpairs+=<:>         " specially for html
@@ -208,12 +209,19 @@ autocmd BufReadPost *
 "colorscheme railscasts
 "colorscheme envylabs
 "hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
+colorscheme railscasts
+"colorscheme envylabs
+hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 
 "hide buffers when not displayed
 "set hidden
 map bn :bn<cr>          " Next buffer.
 map bp :bp<cr>          " Previous buffer.
 map bd :bd<cr>          " buffer close"
+
+" Flod Focus
+"map <Leader>ff :call FoldFocus('e')<CR> " Focus in place
+map <Leader>ff :call FoldFocus('vnew')<CR> " Focus sidebar
 
 
 """"""""""""""""" SHORTCUTS """""""""""""""""
