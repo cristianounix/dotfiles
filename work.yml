@@ -1,0 +1,12 @@
+# ~/.tmuxinator/work.yml
+
+name: SHM
+
+windows:
+  - SHM:
+    layout: tiled
+    panes:
+      - cd /Users/vntcrol/www/shm/dragons/shmt/shmt-monitor/src/main/web-ember && git pull
+      - ls -al
+
+
