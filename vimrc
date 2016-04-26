@@ -1,29 +1,48 @@
 execute pathogen#infect()
 set nocompatible
+<<<<<<< HEAD
+filetype off
+=======
 filetype  on
 syntax    on
 filetype  plugin on
 
 execute pathogen#infect()
+>>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+""""""""
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
 
 " Default
 Plugin 'gmarik/vundle'
 Plugin 'L9'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim' "search files
+Plugin 'scrooloose/nerdtree' "tree folders end files
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'bling/vim-airline'
-Plugin 'mattboehm/vim-accordion'
-Plugin 'ZoomWin'
+Plugin 'mattboehm/vim-accordion' "vim window manager for people who love splits.
+Plugin 'ZoomWin' "maximize a single window
+Plugin 'mhinz/vim-signify' "show git diff
+
+" Libraries
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-indent'
+Plugin 'tpope/vim-repeat'
+Plugin 'chrisbra/csv.vim'
 
 " Automatic Helpers
-Plugin 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate' "auto close
 
 " UI Additions
 Plugin 'Rykka/colorv.vim'
@@ -37,10 +56,19 @@ Bundle 'd11wtq/tomorrow-theme-vim'
 
 " Commands
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-surround'
 Plugin 'itspriddle/vim-stripper'
 
 " Snippets
+<<<<<<< HEAD
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+"Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
+
+" PHP
+Plugin 'shawncplus/phpcomplete.vim'
+=======
 "Bundle "MarcWeber/vim-addon-mw-utils"
 "Bundle "tomtom/tlib_vim"
 "Bundle "garbas/vim-snipmate"
@@ -56,12 +84,18 @@ Plugin 'itspriddle/vim-stripper'
 "Plugin 'ecomba/vim-ruby-refactoring'
 "Plugin 'nelstrom/vim-textobj-rubyblock'
 "Plugin 'nanki/treetop.vim'
+>>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 
 "JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'leshill/vim-json'
+<<<<<<< HEAD
+Plugin 'nono/vim-handlebars'
+Plugin 'gertjanreynaert/cobalt2-vim-theme'
+=======
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'nathanaelkane/vim-indent-guides'
+>>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 
 "HTML
 Plugin 'amirh/HTML-AutoCloseTag'
@@ -70,26 +104,29 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'gorodinskiy/vim-coloresque'
 
 " Other Languages Syntax highlight
-Plugin 'gmarik/vim-markdown'
+"Plugin 'gmarik/vim-markdown'
 Plugin 'timcharper/textile.vim'
+<<<<<<< HEAD
+"Plugin 'tsaleh/vim-tmux'
+=======
 Plugin 'tsaleh/vim-tmux'
 "Plugin 'rodjek/vim-puppet'
 "Plugin 'Puppet-Syntax-Highlighting'
+>>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 Plugin 'scrooloose/syntastic'
 Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
 
-" Libraries
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'tpope/vim-repeat'
-Plugin 'chrisbra/csv.vim'
-
 call vundle#end()
+<<<<<<< HEAD
+
+"let g:airline_theme="badwolf"
+=======
 execute pathogen#infect()
 
 filetype plugin indent on
 
 "set g:airline_theme="badwolf"
+>>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -115,7 +152,6 @@ set background=dark
 set tabpagemax=15               " Only show 15 tabs
 set ts=4 "tab size
 set showmode                    " Display the current mode
-"highlight clear SignColumn      " SignColumn should match background
 set linespace=4                 " No extra spaces between rows
 set showmatch                   " Show matching brackets/parenthesis
 set incsearch                   " Find as you type search
@@ -130,9 +166,12 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
+<<<<<<< HEAD
+=======
 "set foldenable                  " Auto fold code
 "set regexpengine=1
 "set foldmethod=indent           "fold based on indent
+>>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 set noshowmode
 set bdir+=/tmp
 set dir-=.
@@ -158,7 +197,6 @@ set mouse=a                 " use mouse in all modes
 set ttymouse=xterm2
 set report=0                " always report number of lines changed                "
 set nowrap                  " dont wrap lines
-"set relativenumber
 set number                  " show line numbers
 set numberwidth=2
 set showmatch               " show matching bracket (briefly jump)
@@ -191,8 +229,8 @@ let NERDTreeShowBookmarks=0
 let NERDTreeWinPos = "left"
 
 " ctrlp
-set wildignore+=*/tmp/*,*.so,*.o,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+set wildignore+=*/tmp/*,*.so,*.o,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store,*/bower_components/*,*/node_modules/*  " MacOSX/Linux
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|tmp'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_height = 20
@@ -207,9 +245,12 @@ autocmd BufReadPost *
 
 "let base16colorspace=256
 "colorscheme railscasts
+<<<<<<< HEAD
+=======
 "colorscheme envylabs
 "hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 colorscheme railscasts
+>>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 "colorscheme envylabs
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 
@@ -219,6 +260,9 @@ map bn :bn<cr>          " Next buffer.
 map bp :bp<cr>          " Previous buffer.
 map bd :bd<cr>          " buffer close"
 
+<<<<<<< HEAD
+
+=======
 " Flod Focus
 "map <Leader>ff :call FoldFocus('e')<CR> " Focus in place
 map <Leader>ff :call FoldFocus('vnew')<CR> " Focus sidebar
@@ -240,11 +284,9 @@ endfunction
 
 
 " ------------------------------------------------------------------------------
+>>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 " Misc
 " ------------------------------------------------------------------------------
-
-" Ignore some files with Ctrl+P
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Resize all splits when the (tmux) panel is resized
 au VimResized * exe "normal! \<c-w>="

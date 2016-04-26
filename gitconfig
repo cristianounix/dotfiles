@@ -7,18 +7,12 @@
     email = cristianounix@gmail.com
 
 [user]
-    name  = cristianounix
-    email = cristianounix@gmail.com
+	name = Cristiano S. Oliveira
+	email = cristiano.oliveira@venturus.org.br
 
 [core]
     pager = less -R
     editor = /usr/bin/vim
-    excludesfile = ~/.gitignore
-    #excludesfile = /Users/cristainounix/.gitignore_global
-
-    #[difftool "sourcetree"]
-    #cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    #path =
 
 [push]
     default = tracking
@@ -51,13 +45,7 @@
     # Result: <short-sha> <commit-message> (<pointer-names>) -- <commit-author-name>; <relative-time>
     nice = "%C(yellow)%h%C(reset) %C(white)%s%C(cyan)%d%C(reset) -- %an; %ar"
 
-
 [alias]
     who = !echo \"== Commits by Author:\\n`git shortlog -s -n`\\n\"
     st = status
     co = checkout
-    ci = commit
-    # lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(yellow)%h%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset) %C(bold yellow)%d%C(reset) %C(green)%ar%C(reset)'
-    # lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-    #l = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
-    ll = log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all
