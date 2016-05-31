@@ -1,7 +1,9 @@
+filetype  on
+syntax    on
+filetype  plugin on
 
 execute pathogen#infect()
-set nocompatible
-filetype off
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -60,14 +62,32 @@ Bundle "honza/vim-snippets"
 
 " PHP
 Plugin 'shawncplus/phpcomplete.vim'
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle "garbas/vim-snipmate"
+"Bundle "honza/vim-snippets"
+
+" Ruby
+"Plugin 'vim-ruby/vim-ruby'
+"Plugin 'tpope/vim-haml'
+"Plugin 'tpope/vim-rails'
+"Plugin 'tpope/vim-rake'
+"Plugin 'tpope/vim-bundler'
+"Plugin 'rainerborene/vim-reek'
+"Plugin 'ecomba/vim-ruby-refactoring'
+"Plugin 'nelstrom/vim-textobj-rubyblock'
+"Plugin 'nanki/treetop.vim'
 
 "JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'leshill/vim-json'
 "Plugin 'nono/vim-handlebars'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'gertjanreynaert/cobalt2-vim-theme'
+"Plugin 'gertjanreynaert/cobalt2-vim-theme'
 Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nono/vim-handlebars'
+Plugin 'gertjanreynaert/cobalt2-vim-theme'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 "HTML
@@ -78,12 +98,21 @@ Plugin 'gorodinskiy/vim-coloresque'
 
 " Other Languages Syntax highlight
 Plugin 'timcharper/textile.vim'
+"Plugin 'gmarik/vim-markdown'
+"Plugin 'tsaleh/vim-tmux'
+Plugin 'tsaleh/vim-tmux'
+"Plugin 'rodjek/vim-puppet'
+"Plugin 'Puppet-Syntax-Highlighting'
 Plugin 'scrooloose/syntastic'
 Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
 
 call vundle#end()
 
-"let g:airline_theme="badwolf"
+execute pathogen#infect()
+
+filetype plugin indent on
+
+"set g:airline_theme="badwolf"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -123,6 +152,9 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
+"set foldenable                  " Auto fold code
+"set regexpengine=1
+"set foldmethod=indent           "fold based on indent
 set noshowmode
 set bdir+=/tmp
 set dir-=.
@@ -196,10 +228,8 @@ autocmd BufReadPost *
 
 "let base16colorspace=256
 "colorscheme railscasts
-"colorscheme envylabs
 "hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 colorscheme railscasts
-"colorscheme envylabs
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 
 "hide buffers when not displayed
