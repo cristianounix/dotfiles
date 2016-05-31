@@ -1,15 +1,7 @@
+
 execute pathogen#infect()
 set nocompatible
-<<<<<<< HEAD
 filetype off
-=======
-filetype  on
-syntax    on
-filetype  plugin on
-
-execute pathogen#infect()
->>>>>>> a94ded36139a2e008e470768327f7a42c357729f
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -34,6 +26,7 @@ Plugin 'bling/vim-airline'
 Plugin 'mattboehm/vim-accordion' "vim window manager for people who love splits.
 Plugin 'ZoomWin' "maximize a single window
 Plugin 'mhinz/vim-signify' "show git diff
+Plugin 'avakhov/vim-yaml'
 
 " Libraries
 Plugin 'kana/vim-textobj-user'
@@ -60,7 +53,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'itspriddle/vim-stripper'
 
 " Snippets
-<<<<<<< HEAD
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 "Bundle "garbas/vim-snipmate"
@@ -68,34 +60,15 @@ Bundle "honza/vim-snippets"
 
 " PHP
 Plugin 'shawncplus/phpcomplete.vim'
-=======
-"Bundle "MarcWeber/vim-addon-mw-utils"
-"Bundle "tomtom/tlib_vim"
-"Bundle "garbas/vim-snipmate"
-"Bundle "honza/vim-snippets"
-
-" Ruby
-"Plugin 'vim-ruby/vim-ruby'
-"Plugin 'tpope/vim-haml'
-"Plugin 'tpope/vim-rails'
-"Plugin 'tpope/vim-rake'
-"Plugin 'tpope/vim-bundler'
-"Plugin 'rainerborene/vim-reek'
-"Plugin 'ecomba/vim-ruby-refactoring'
-"Plugin 'nelstrom/vim-textobj-rubyblock'
-"Plugin 'nanki/treetop.vim'
->>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 
 "JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'leshill/vim-json'
-<<<<<<< HEAD
-Plugin 'nono/vim-handlebars'
+"Plugin 'nono/vim-handlebars'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'gertjanreynaert/cobalt2-vim-theme'
-=======
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'nathanaelkane/vim-indent-guides'
->>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 
 "HTML
 Plugin 'amirh/HTML-AutoCloseTag'
@@ -104,29 +77,13 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'gorodinskiy/vim-coloresque'
 
 " Other Languages Syntax highlight
-"Plugin 'gmarik/vim-markdown'
 Plugin 'timcharper/textile.vim'
-<<<<<<< HEAD
-"Plugin 'tsaleh/vim-tmux'
-=======
-Plugin 'tsaleh/vim-tmux'
-"Plugin 'rodjek/vim-puppet'
-"Plugin 'Puppet-Syntax-Highlighting'
->>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 Plugin 'scrooloose/syntastic'
 Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
 
 call vundle#end()
-<<<<<<< HEAD
 
 "let g:airline_theme="badwolf"
-=======
-execute pathogen#infect()
-
-filetype plugin indent on
-
-"set g:airline_theme="badwolf"
->>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -166,12 +123,6 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
-<<<<<<< HEAD
-=======
-"set foldenable                  " Auto fold code
-"set regexpengine=1
-"set foldmethod=indent           "fold based on indent
->>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 set noshowmode
 set bdir+=/tmp
 set dir-=.
@@ -179,7 +130,7 @@ set dir+=/tmp
 set undolevels=10000                         " Large undo levels.
 set encoding=utf8                            " Always use unicode.
 set nobackup                                 " Disable backups.
-
+set ic
 
 set laststatus=2
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%c,%l]
@@ -245,12 +196,9 @@ autocmd BufReadPost *
 
 "let base16colorspace=256
 "colorscheme railscasts
-<<<<<<< HEAD
-=======
 "colorscheme envylabs
 "hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 colorscheme railscasts
->>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 "colorscheme envylabs
 hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 
@@ -260,9 +208,6 @@ map bn :bn<cr>          " Next buffer.
 map bp :bp<cr>          " Previous buffer.
 map bd :bd<cr>          " buffer close"
 
-<<<<<<< HEAD
-
-=======
 " Flod Focus
 "map <Leader>ff :call FoldFocus('e')<CR> " Focus in place
 map <Leader>ff :call FoldFocus('vnew')<CR> " Focus sidebar
@@ -281,10 +226,6 @@ function! SetCursorPosition()
   end
 endfunction
 
-
-
-" ------------------------------------------------------------------------------
->>>>>>> a94ded36139a2e008e470768327f7a42c357729f
 " Misc
 " ------------------------------------------------------------------------------
 
@@ -347,4 +288,3 @@ function! DeleteInactiveBufs()
 endfunction
 
 command! Bdi :call DeleteInactiveBufs()
-
