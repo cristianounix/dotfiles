@@ -25,7 +25,8 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 
 cd() {
   builtin cd "$@";
-  ls;
+  #ls;
+  pwd
 }
 
 # 3.  FILE AND FOLDER MANAGEMENT
@@ -102,6 +103,12 @@ alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 alias cleanupLS="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 alias screensaverDesktop='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background'
 alias dockup="boot2docker init && boot2docker up && eval \"\$(boot2docker shellinit)\""
+
+alias python="python3"
+alias pip="pip3"
+
+alias docker_install='docker run --rm -v "$(pwd)":/app -w /app google/nodejs sh -c "npm install"'
+alias docker_run='docker run --rm -v "$(pwd)":/app -w /app google/nodejs sh -c "node hello.js"'
 
 # 8.  WEB DEVELOPMENT
 httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page

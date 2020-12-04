@@ -11,9 +11,41 @@ check_homebrew(){
   if which brew > /dev/null; then
     echo 'HomeBrew ok !'
   else
+    echo "Instaling brew..."
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    echo "HomeBrew ok!"
   fi
   brew tap phinze/homebrew-cask
+}
+
+check_vundle(){
+  if -d ~/.vim/bundle/ then
+    echo "Vundle ok"
+  else
+    echo "Cloning vundle for vim..."
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    echo "Vundle ok!"
+  fi
+}
+
+check_docker(){
+  if type docker > /dev/null then
+    echo "Docker ok"
+  else
+    echo "Installing Docker..."
+    brew cask install docker
+    echo "Docker ok!"
+  fi
+}
+
+check_zsh(){
+  if type zsh > /dev/null then
+    echo "OhMyZsh ok"
+  else
+    echo "Installing oh-my-zsh..."
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    echo "Oh-my-zsh ok!"
+  fi
 }
 
 list_apps_brew_cask(){
@@ -23,19 +55,11 @@ list_apps_brew_cask(){
         "google-chrome"
         "skype"
         "iterm2"
-        "komanda"
-        "utorrent"
         "vlc"
-        "gfxcardstatus"
         "sublime-text"
         "filezilla"
-        "disk-inventory-x"
         "dropbox"
-        "mou"
-        "feeds"
-        #"limechat"
-        "arduino"
-        "google-drive"
+        "visual-studio-code"
     )
 }
 
@@ -46,13 +70,8 @@ list_apps_brew(){
         "fortune"
         "vim"
         "coreutils"
-        "jpeg"
         "imagemagick"
-        "libyaml"
         "tmux"
-        "rbenv"
-        "ruby-build"
-        "mysql"
         "macvim --override-system-vim"
         "wget"
         "node"
@@ -63,7 +82,6 @@ list_apps_brew(){
         "openssl"
         "htop"
         "atop"
-        "brew-cask"
   )
 }
 
@@ -79,42 +97,27 @@ create_sym_links(){
 
 vim_configs(){
   pip install --user git+git://github.com/Lokaltog/powerline
+
   cd ~/.vim/bundle/NERD_tree-ack/plugin
   curl -so NERD_tree-ack.vim http://www.vim.org/scripts/download_script.php\?src_id\=17196
-  mkdir ~/.vim/bundle
+  
+  mkdir -p ~/.vim/bundle
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+  
+  mkdir -p ~/.vim/autoload && \
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
   mkdir -p ~/.vim/bundle/NERD_tree-ack/plugin
 }
+ 
 
-mysql_configs(){
-  # Install MySQL
-  mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
-  mysql.server start
-  #/usr/local/Cellar/mysql/5.5.27/bin/mysqladmin -u root password '123'
-  mysqladmin -u root password '123'
-  brew info mysql
-}
-
-ohmyzsh_configs(){
-  curl -L http://install.ohmyz.sh | sh
-}
-
-ruby_configs(){
-  rbenv install 2.1.0
-  rbenv global 2.1.0
-}
 
 check_homebrew
-exit 1
+check_vundle
+check_zsh
+
 brew install $(list_apps_brew)
 brew cask install $(list_apps_brew_cask)
 
-ruby_configs
-mysql_configs
 vim_configs
-ohmyzsh_configs
-
 create_sym_links

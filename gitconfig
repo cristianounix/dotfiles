@@ -13,6 +13,7 @@
 [core]
     pager = less -R
     editor = /usr/bin/vim
+	excludesfile = /Users/vntcrol/.gitignore_global
 
 [push]
     default = tracking
@@ -49,3 +50,16 @@
     who = !echo \"== Commits by Author:\\n`git shortlog -s -n`\\n\"
     st = status
     co = checkout
+    change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+
+
+[log]
+	date = iso
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/vntcrol/.stCommitMsg

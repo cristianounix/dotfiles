@@ -30,6 +30,8 @@ Plugin 'ZoomWin' "maximize a single window
 Plugin 'mhinz/vim-signify' "show git diff
 Plugin 'avakhov/vim-yaml'
 
+Plugin 'wakatime/vim-wakatime'
+
 " Libraries
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
@@ -40,12 +42,12 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'Raimondi/delimitMate' "auto close
 
 " UI Additions
-Plugin 'Rykka/colorv.vim'
-Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'flazz/vim-colorschemes'
-"Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'chriskempson/base16-vim'
-"Plugin 'mattn/calendar-vim'
+" Plugin 'Rykka/colorv.vim'
+" Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'chriskempson/base16-vim'
+" Plugin 'mattn/calendar-vim'
 
 Bundle 'd11wtq/tomorrow-theme-vim'
 
@@ -91,7 +93,7 @@ Plugin 'gertjanreynaert/cobalt2-vim-theme'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 "HTML
-Plugin 'amirh/HTML-AutoCloseTag'
+Plugin 'alvan/vim-closetag'
 Plugin 'mattn/emmet-vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'gorodinskiy/vim-coloresque'
@@ -129,6 +131,13 @@ if has("unix")
   let g:syntastic_warning_symbol = "☛"
   let g:syntastic_style_warning_symbol = ">"
 endif
+
+" Auto close tag config
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
 
 let g:syntastic_enable_signs=1
 let mapleader = ","
