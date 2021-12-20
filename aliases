@@ -1,12 +1,7 @@
 # cristianounix@gmail.com
 # ALIASES and FUNCTIONS to Terminal
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
-alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-alias nginx-start="sudo nginx"
-alias nginx-stop="sudo nginx -s stop"
-alias php-fpm-stop="launchctl unload -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php55.plist"
-alias php-fpm-start="launchctl load -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php55.plist"
+
 # alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
@@ -105,9 +100,6 @@ alias screensaverDesktop='/System/Library/Frameworks/ScreenSaver.framework/Resou
 
 alias python="python3"
 alias pip="pip3"
-
-alias docker_install='docker run --rm -v "$(pwd)":/app -w /app google/nodejs sh -c "npm install"'
-alias docker_run='docker run --rm -v "$(pwd)":/app -w /app google/nodejs sh -c "node hello.js"'
 
 # 8.  WEB DEVELOPMENT
 httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page
