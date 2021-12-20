@@ -14,7 +14,7 @@ export ZSH=/Users/vntcrol/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="muse"
+#ZSH_THEME="muse"
 #ZSH_THEME="spaceship"
 
 # ENABLE_CORRECTION="true"
@@ -55,3 +55,4 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH="/opt/brew/bin:$PATH"
