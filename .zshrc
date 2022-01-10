@@ -35,7 +35,8 @@ else
   export EDITOR='vim'
 fi
 
-source ~/dotfiles/aliases	
+source ~/dotfiles/aliases
+source ~/dotfiles/kind_completation
 
 
 export NVM_DIR="$HOME/.nvm"
